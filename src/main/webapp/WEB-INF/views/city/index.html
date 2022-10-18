@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все города</title>
+</head>
+<body>
+<h1 style="text-align:center"> Ниже указаны города Пермского края, кликнув на один из них вы узнаете численность его
+    населения и площадь</h1>
+
+<hr/>
+<div style="display:flex; height:600px">
+
+    <div style="display:flex; flex-direction: column; gap: 16px; flex-wrap: wrap">
+
+
+        <a  style="font-size:20px; line-height:24px; cursor:pointer; text-decoration:none" th:each="city :${city}"
+                th:href="@{/city/{id}(id=${city.getId()})}"
+           th:text="${city.getName()}">user</a>
+
+    </div>
+    <div style="display:flex; align-items:center; justify-content:right;width:100%">
+    <img src="http://megapedia.wiki/w/images/f/f7/%D0%9A%D0%A059.png" height="600px" width="600px">
+    </div>
+</div>
+<br/>
+<hr/>
+<p style="font-size:20px; line-height:24px;"> Если вы увидели, что на сайте отсутствует какой-либо город, входящий в Пермский край, вы можете его добавить</p>
+<a style="font-size:20px; line-height:24px; cursor:pointer; text-decoration:none" href="/city/new"> Добавить город </a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update city</title>
+</head>
+<body>
+<form accept-charset="UTF-8" th:method="PATCH" th:action ="@{/city/{id}(id=${city.getId()})}" th:object = "${city}">
+    <label for = "name"> Введите название:  </label>
+    <input type ="text" th:field ="*{name}" id = "name"/>
+    <br/>
+    <label for ="population"> Введите количество населения:  </label>
+    <input type ="text" th:field ="*{population}" id = "population"/>
+    <br/>
+    <label for ="square"> Введите площадь (кв.м.):  </label>
+    <input type ="text" th:field ="*{square}" id = "square"/>
+    <br/>
+    <input type ="submit" value = "Обновить!"/>
+
+</form>
+</body>
+</html>

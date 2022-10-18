@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CityId</title>
+</head>
+<body>
+<b>Название города: </b> <p th:text="${cityId.getName()}" > value</p>
+<b> Количество населения:</b> <p th:text="${cityId.getPopulation()}" > value</p>
+<b> Площадь территории города составляет (кв.м.): </b> <p th:text="${cityId.getSquare()}" > value</p>
+<br/>
+
+<a th:href="@{/city/{id}/edit(id=${cityId.getId()})}">Изменить</a>
+
+<br/>
+
+<form th:method="DELETE" th:action ="@{/city/{id}(id=${cityId.getId()})}">
+    <input type = "submit" value = "Удалить"/>
+
+</form>
+
+</body>
+</html>
